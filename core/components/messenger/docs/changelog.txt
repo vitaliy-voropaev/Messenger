@@ -1,5 +1,12 @@
 Changelog for modExtra.
 
+1.1.5-pl
+==============
+- Fixed errors custom table prefix
+- Fixed add initialize class load
+- Restore _build configuration
+- Improved JS fixes
+
 1.0.0-beta
 ==============
 - Opimized for MODX 2.3
