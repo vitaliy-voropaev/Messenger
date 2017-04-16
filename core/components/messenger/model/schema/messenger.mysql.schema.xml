@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="messenger" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="messenger" version="1.1">
+
+	<object class="MessengerMessage" table="messenger_messages" extends="xPDOSimpleObject">
+		<field key="message" dbtype="text" phptype="text" null="true" default=""/>
+		<field key="from" dbtype="text" phptype="text" null="true" default=""/>
+		<field key="dialog" dbtype="text" phptype="text" null="true" default=""/>
+		<field key="timestamp" dbtype="timestamp" phptype="timestamp" null="true" />
+	</object>
+
+	<object class="MessengerDialog" table="messenger_dialogues" extends="xPDOSimpleObject">
+		<field key="name" dbtype="longtext" phptype="text" null="true" default=""/>
+		<field key="users" dbtype="longtext" phptype="text" null="true" default=""/>
+		<field key="owner" dbtype="text" phptype="text" null="true" default=""/>
+	</object>
+
+	<object class="MessengerUser" table="messenger_users" extends="xPDOSimpleObject">
+		<field key="internalKey" dbtype="int" precision="10" phptype="integer" null="false" />
+		<field key="lasthit" dbtype="timestamp" phptype="timestamp" null="false" />
+	</object>
+
+
+	<object class="MessengerMessageUnread" table="messenger_messages_unread" extends="xPDOObject">
+        <field key="message_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="dialog" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="from" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="to" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+    </object>
+
+</model>
